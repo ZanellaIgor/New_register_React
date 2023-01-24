@@ -1,17 +1,19 @@
+import { useState, useEffect } from 'react';
 import './App.css';
 import InputNewProduct from './componentes/InputNewProduct';
 
 
-//import Inputs from './componentes/Inputs.js';
-import ListaRender from './componentes/ListaRender';
+
+import ListaRenderTab from './componentes/ListaRenderTab';
 
 
 function App() {
   return (
     <div clasName="App">
-      <h2>Novo registro</h2>
-      <InputNewProduct/>
-      <ListaRender/>
+      <h1>Novo registro</h1>
+      <hr />
+      <InputNewProduct />
+      <ListaRenderTab />
     </div>
 
   );
