@@ -6,6 +6,10 @@ body {
     padding: 30px;
 }
 
+h2 {
+    margin-bottom: 0px;
+}
+
 form {
     padding: 10px;
     gap: 20px;

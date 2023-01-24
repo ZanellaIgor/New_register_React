@@ -2,33 +2,36 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 
 
-const baseURL = "https://windelweb.windel.com.br:3000/teste-front"
+const baseURL = "https://windelweb.windel.com.br:3000/teste-front/"
+
 
 export default function Produtos() {
   const [produtos, setProdutos] = useState([]);
   useEffect(() => {
-    axios.get(baseURL)
-      .then((response) => {
-        console.log(response);
-        setProdutos(response.data)
-      })
-      .catch((err) => {
-        console.error("ops! ocorreu um erro : ");
-      });
+    
 
+
+      axios.get(baseURL)
+        .then((response) => {
+          console.log(response);
+          setProdutos(response.data)
+        })
+        .catch((err) => {
+          console.error("ops! ocorreu um erro : ");
+        });
+    
   }, [produtos]);
   return (
-    
+
     <table className="container-tabela">
       <thead>
         <tr>
           <th>Imagem</th>
           <th>Nome do Produto</th>
           <th>Referência</th>
-          <th>Valor de Venda</th>
+          <th> <span> Valor de Venda</span></th>
           <th>Fabricante</th>
           <th>Estoque</th>
-          
         </tr>
       </thead>
       <tbody >

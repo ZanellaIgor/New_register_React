@@ -10,7 +10,7 @@ import ListaRenderTab from './componentes/ListaRenderTab';
 function App() {
   return (
     <div clasName="App">
-      <h1>Novo registro</h1>
+      <h2>Novo registro</h2>
       <hr />
       <InputNewProduct />
       <ListaRenderTab />
