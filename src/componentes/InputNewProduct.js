@@ -35,8 +35,6 @@ const InputNewProduct = () => {
         console.log(novoProduto)
     }
 
-
-
     return (
         <div>
             <div className="container-form">

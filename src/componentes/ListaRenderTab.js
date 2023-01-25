@@ -1,5 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { BsFillGridFill } from 'react-icons/bs';
+import { RiDeleteBin7Fill } from 'react-icons/ri';
+import { FaListUl } from 'react-icons/fa'
 
 
 const baseURL = "https://windelweb.windel.com.br:3000/teste-front/"
@@ -7,20 +10,30 @@ const baseURL = "https://windelweb.windel.com.br:3000/teste-front/"
 
 export default function Produtos() {
   const [produtos, setProdutos] = useState([]);
+
   useEffect(() => {
-    
+    axios.get(baseURL)
+      .then((response) => {
+        console.log(response);
+        setProdutos(response.data)
+      })
+      .catch((error) => {
+        console.error("ops! ocorreu um erro : ");
+      });
 
+  },);
 
-      axios.get(baseURL)
-        .then((response) => {
-          console.log(response);
-          setProdutos(response.data)
+{/*deleteProduto = (id) =>{
+    if (window.confirm('Tem certeza que deseja deletar este Produto?')) {
+      axios.delete(`${baseURL}/${id}`)
+        .then(response => {
+          console.log(response.data)
         })
-        .catch((err) => {
-          console.error("ops! ocorreu um erro : ");
-        });
-    
-  }, [produtos]);
+        .catch(error => console.log(error))
+    }
+
+  }*/}
+
   return (
 
     <table className="container-tabela">
@@ -32,17 +45,19 @@ export default function Produtos() {
           <th> <span> Valor de Venda</span></th>
           <th>Fabricante</th>
           <th>Estoque</th>
+          <th> <FaListUl /> <BsFillGridFill /> </th>
         </tr>
       </thead>
       <tbody >
         {produtos.map(produto => (
           <tr key={produto.id} className="container-produto">
-            <th><img src={produto.imagemProduto} alt="Imagem do Produto" className="imagem-produto " /></th>
-            <th>{produto.nome}</th>
-            <th>{produto.valorVenda}</th>
-            <th>{produto.referencia}</th>
-            <th>{produto.fabricante}</th>
-            <th>{produto.estoque} {produto.unidadeMedida}</th>
+            <td><img src={produto.imagemProduto} alt="Imagem do Produto" className="imagem-produto " /></td>
+            <td>{produto.nome}</td>
+            <td>{produto.valorVenda}</td>
+            <td>{produto.referencia}</td>
+            <td>{produto.fabricante}</td>
+            <td>{produto.estoque} {produto.unidadeMedida}</td>
+            <td onClick={() => this.deleteProduto(produto.id)}><RiDeleteBin7Fill /></td>
           </tr>
         ))}
       </tbody>

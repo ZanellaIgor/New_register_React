@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 import InputNewProduct from './componentes/InputNewProduct';
-
+import {FaThList, RiDeleteBin7Fill, BsFillGridFill} from 'react-icons' 
 
 
 import ListaRenderTab from './componentes/ListaRenderTab';
