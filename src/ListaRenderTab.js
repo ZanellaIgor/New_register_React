@@ -20,6 +20,7 @@ function ListaRenderTab() {
       .then((response) => {
         console.log(response);
         setProdutos(response.data)
+        
       })
       .catch((error) => {
         console.error(error);
