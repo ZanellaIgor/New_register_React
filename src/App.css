@@ -6,7 +6,7 @@ body {
     padding: 30px;
 }
 
-h2 {
+h1 {
     margin-bottom: 0px;
 }
 
@@ -63,11 +63,11 @@ input:hover {
     width: 138px;
     height: 34px;
     cursor: pointer;
-
 }
 
+
 .container-tabela {
-    width: 100%;
+    display: grid;
     margin-top: 10px;
     padding: 10px;
     font-size: 14px;
@@ -75,26 +75,57 @@ input:hover {
     border: 1px solid #A0AEC0;
     border-radius: 6px;
     text-align: justify;
-    border-spacing: 1px;
+
 }
 
-.container-cabecalho {
-    padding: 200px;
-    border: 2px solid #2e2f30;
+thead {
+    border: 1px solid #A0AEC0;
+    border-radius: 6px;
+    margin-bottom: 4px;
+}
 
+tr {
+    padding: 10px;
+    display: grid;
+    border-radius: 6px;
+    grid-template-columns: 1.5fr 4.5fr 1fr 1fr 1fr 1fr 1fr;
+    margin-bottom: 10px;
+    border-bottom: #FFFFFF;
+}
+
+th {
+    cursor: pointer;
+}
+
+.imagem-cabecalho {
+    cursor: not-allowed;
 }
 
 .container-produto {
-    border: 1px solid #A0AEC0;
     background: #E2E8F0;
     border-radius: 6px;
+    display: grid;
+    grid-template-columns: 1.5fr 4.5fr 1fr 1fr 1fr 1fr 1fr;
+    justify-content: center;
 }
+
 
 .container-produto:hover {
     background-color: #B8D6FF;
 }
 
 .imagem-produto {
-    width: 64px;
-    height: 64px;
+    border-radius: 6px;
+    width: 60px;
+    height: 60px;
+}
+
+.imagem-acao {
+    cursor: pointer;
+    
+}
+
+path, svg {
+    width: 40%;
+    height: 50%;
 }

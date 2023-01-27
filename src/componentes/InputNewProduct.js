@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 
+
 const InputNewProduct = () => {
     const [descProduto, setDescProduto] = useState()
     const [vlrVenda, setVlrVenda] = useState()
@@ -9,13 +10,13 @@ const InputNewProduct = () => {
     const [fabProduto, setFabProduto] = useState()
     const [estoqueProduto, setEstoqueProduto] = useState()
     const [imagem, setImagem] = useState()
+    
     const url = "https://windelweb.windel.com.br:3000/teste-front"
 
     function addNovoProduto(e) {
         e.preventDefault()
         //criação do produto
         const novoProduto = {
-
             nome: descProduto,
             valorVenda: parseFloat(vlrVenda),
             referencia: refProduto,
@@ -28,10 +29,10 @@ const InputNewProduct = () => {
         axios.post(url, novoProduto)
             .then(response => {
                 console.log(response.data)
+                this.setState(novoProduto)
+                window.location.reload(true)
             })
             .catch(error => console.log(error))
-
-
         console.log(novoProduto)
     }
 
@@ -40,12 +41,12 @@ const InputNewProduct = () => {
             <div className="container-form">
                 <form id="form">
                     <div className="container-registro">
-                        <label htmlFor="descProduto">Descrição*:</label>
+                        <label htmlFor="descProduto">Descrição:</label>
                         <input type="text" name="descProduto" id="descProdutoInput" onChange={(e) => setDescProduto(e.target.value)} required/>
                     </div>
 
                     <div className="container-registro">
-                        <label htmlFor="vlrVenda">Valor de Venda*:</label>
+                        <label htmlFor="vlrVenda">Valor de Venda:</label>
                         <input type="number" step="0.01" name="vlrVenda" id="vlrVendaInput" onChange={(e) => setVlrVenda(e.target.value)} required/>
                     </div>
 
@@ -55,7 +56,7 @@ const InputNewProduct = () => {
                     </div>
 
                     <div className="container-registro">
-                        <label htmlFor="un">Unidade de medida*:</label>
+                        <label htmlFor="un">Unidade de medida:</label>
                         <input type="text" name="un" id="unInput" onChange={(e) => setUn(e.target.value)} required/>
                     </div>
 
