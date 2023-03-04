@@ -43,7 +43,7 @@ function ListaRenderTab() {
   //Alterar produto
   function alterarProduto(id) {
     alert("Função não habilitada")
-
+    
     axios.patch(`${baseURL}/${id}`, produtos)
       .then(response => {
         console.log(response)
