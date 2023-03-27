@@ -6,8 +6,31 @@ body {
     padding: 30px;
 }
 
-h1 {
+h2 {
     margin-bottom: 0px;
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.container-filtro {
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: space-around;
+    border: 1px solid #A0AEC0;
+    border-radius: 6px;
+    font-size: 14px;
+    line-height: 16px;
+    justify-content: space-between;
+}
+
+.container-filtro label {
+    margin: 5px;
+    padding: 0px;
 }
 
 form {
@@ -27,7 +50,7 @@ input {
     display: block;
     border-radius: 6px;
     border: 1px solid #A0AEC0;
-    width: 365px;
+    width: 312px;
     height: 35px;
     background: #E2E8F0;
 }
@@ -42,25 +65,25 @@ input:hover {
 
 }
 
-.salvar {
+.limpar-dados {
     background: #E53E3E;
     border-radius: 6px;
     border: 1px solid #A0AEC0;
     padding: 10px;
     color: #FFFFFF;
-    width: 79px;
+    width: 138px;
     height: 34px;
     cursor: pointer;
     margin: 16px;
 }
 
-.limpar-dados {
+.salvar {
     background: #38A169;
     border-radius: 6px;
     border: 1px solid #A0AEC0;
     padding: 10px;
     color: #FFFFFF;
-    width: 138px;
+    width: 79px;
     height: 34px;
     cursor: pointer;
 }
@@ -120,12 +143,29 @@ th {
     height: 60px;
 }
 
-.imagem-acao {
+.imagem-acao-deletar {
     cursor: pointer;
-    
+    color: #FF0606;
+}
+.imagem-acao-alterar {
+    cursor: pointer;
+    color:#B9885C;
 }
 
-path, svg {
+.limpar-filtro {
+    background-color: #FF0606;
+    color: #FFFFFF;
+    width: 115px;
+    height: 22px;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 5px;
+    border: none;
+    border-radius: 6px;
+}
+
+path,
+svg {
     width: 40%;
     height: 50%;
 }
