@@ -14,7 +14,6 @@ const baseURL = "https://windelweb.windel.com.br:3000/teste-front"
 
 function ListaRenderTab() {
   const [produtos, setProdutos] = useState([]);
-
   useEffect(() => {
     axios.get(baseURL)
       .then((response) => {

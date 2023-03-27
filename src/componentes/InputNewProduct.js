@@ -10,7 +10,7 @@ const InputNewProduct = () => {
     const [fabProduto, setFabProduto] = useState()
     const [estoqueProduto, setEstoqueProduto] = useState()
     const [imagem, setImagem] = useState()
-    
+
     const url = "https://windelweb.windel.com.br:3000/teste-front"
 
     function addNovoProduto(e) {
@@ -42,12 +42,12 @@ const InputNewProduct = () => {
                 <form id="form">
                     <div className="container-registro">
                         <label htmlFor="descProduto">Descrição:</label>
-                        <input type="text" name="descProduto" id="descProdutoInput" onChange={(e) => setDescProduto(e.target.value)} required/>
+                        <input type="text" name="descProduto" id="descProdutoInput" onChange={(e) => setDescProduto(e.target.value)} required />
                     </div>
 
                     <div className="container-registro">
                         <label htmlFor="vlrVenda">Valor de Venda:</label>
-                        <input type="number" step="0.01" name="vlrVenda" id="vlrVendaInput" onChange={(e) => setVlrVenda(e.target.value)} required/>
+                        <input type="number" step="0.01" name="vlrVenda" id="vlrVendaInput" onChange={(e) => setVlrVenda(e.target.value)} required />
                     </div>
 
                     <div className="container-registro">
@@ -57,7 +57,7 @@ const InputNewProduct = () => {
 
                     <div className="container-registro">
                         <label htmlFor="un">Unidade de medida:</label>
-                        <input type="text" name="un" id="unInput" onChange={(e) => setUn(e.target.value)} required/>
+                        <input type="text" name="un" id="unInput" onChange={(e) => setUn(e.target.value)} required />
                     </div>
 
                     <div className="container-registro">
